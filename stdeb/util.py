@@ -1073,7 +1073,7 @@ class DebianInfo:
                 # virtualenv will set distutils
                 # --prefix=/path/to/virtualenv, but unless explicitly
                 # requested, we want to install into /usr.
-                self.install_prefix = '--prefix=/usr/local'
+                self.install_prefix = '--prefix=/usr'
             else:
                 self.install_prefix = '--prefix=%s' % sys.prefix
         else:
@@ -1494,8 +1494,6 @@ RULES_MAIN = """\
 
 override_dh_python2:
         dh_python2 --no-guessing-versions
-
-override_dh_usrlocal:
 
 %(override_dh_python3)s
 
